@@ -41,7 +41,12 @@ NOSTDINC_FLAGS := \
 	-I$(STAGING_DIR)/usr/include/mac80211/uapi \
 	-include backport/backport.h \
 	-Wno-error=address \
+	-Wno-error=enum-conversion
+
+ifeq (,$(findstring clang,$(KERNEL_CC)))
+NOSTDINC_FLAGS := \
 	-Wno-error=stringop-overread
+endif
 
 NOSTDINC_FLAGS+=-DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT -DBUILD_OPENWRT
 
