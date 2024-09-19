@@ -44,7 +44,7 @@ NOSTDINC_FLAGS := \
 	-Wno-error=enum-conversion
 
 ifeq (,$(findstring clang,$(KERNEL_CC)))
-NOSTDINC_FLAGS := \
+NOSTDINC_FLAGS += \
 	-Wno-error=stringop-overread
 endif
 
