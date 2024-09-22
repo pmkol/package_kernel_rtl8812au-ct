@@ -1,5 +1,3 @@
-diff --git a/Makefile b/Makefile
-index 607d78f..c43ef7a 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -17,6 +17,10 @@ EXTRA_CFLAGS += -Wno-unused-parameter
