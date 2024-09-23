@@ -46,7 +46,9 @@ NOSTDINC_FLAGS := \
 
 ifeq (,$(findstring clang,$(KERNEL_CC)))
 NOSTDINC_FLAGS += \
-	-Wno-error=stringop-overread
+	-Wno-error=stringop-overread \
+	-Wno-missing-prototypes \
+	-Wno-error=restrict
 endif
 
 NOSTDINC_FLAGS+=-DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT -DBUILD_OPENWRT
