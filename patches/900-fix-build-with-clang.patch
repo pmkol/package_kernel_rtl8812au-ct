@@ -1,0 +1,13 @@
+--- a/Makefile
++++ b/Makefile
+@@ -17,6 +17,10 @@ EXTRA_CFLAGS += -Wno-unused-parameter
+ 
+ #EXTRA_CFLAGS += -Wno-uninitialized
+ 
++ifeq ($(CC),clang)
++EXTRA_CFLAGS += -Wno-unknown-warning-option -Wno-unused-but-set-variable -Wno-uninitialized -Wno-parentheses-equality -Wno-strict-prototypes -Wno-tautological-overlap-compare -Wno-array-bounds -Wno-implicit-fallthrough -Wno-header-guard -Wno-unused-const-variable -Wno-pragma-pack -Wno-frame-address
++endif
++
+ EXTRA_CFLAGS += -I$(src)/include
+ 
+ EXTRA_LDFLAGS += --strip-debug
